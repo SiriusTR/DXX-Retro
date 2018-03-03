@@ -330,7 +330,7 @@ char **PHYSFSX_findFiles(const char *path, const char *const *exts)
 {
 	char **list = PHYSFS_enumerateFiles(path);
 	char **i, **j = list;
-	const char *const *k;
+	const char *const *k = NULL;
 	char *ext;
 	
 	if (list == NULL)
@@ -359,7 +359,7 @@ char **PHYSFSX_findabsoluteFiles(const char *path, const char *realpath, const c
 {
 	char **list = PHYSFS_enumerateFiles(path);
 	char **i, **j = list;
-	const char *const *k;
+	const char *const *k = NULL;
 	char *ext;
 	
 	if (list == NULL)

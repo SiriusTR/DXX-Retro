@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7A80E401-4508-42BE-8872-39EBF43195E7}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;WINDOWS;_DEBUG;_CONSOLE;EDITOR;OGL;USE_SDLMIXER;NETWORK;USE_UDP;USE_TRACKER;DXX_VERSION_MAJORi=0;DXX_VERSION_MINORi=58;DXX_VERSION_MICROi=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;arch\include;main;include\editor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RemoveUnreferencedCodeData>false</RemoveUnreferencedCodeData>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>physfs-static.lib;SDL.lib;SDLmain.lib;SDL_mixer.lib;glu32.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y $(TargetPath) C:\Games\DESCENT2\d2x-rebirth_v0.58.1-win\$(TargetFileName)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;arch\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="2d\2dsline.c" />
+    <ClCompile Include="2d\bitblt.c" />
+    <ClCompile Include="2d\bitmap.c" />
+    <ClCompile Include="2d\box.c" />
+    <ClCompile Include="2d\canvas.c" />
+    <ClCompile Include="2d\circle.c" />
+    <ClCompile Include="2d\disc.c" />
+    <ClCompile Include="2d\font.c" />
+    <ClCompile Include="2d\gpixel.c" />
+    <ClCompile Include="2d\line.c" />
+    <ClCompile Include="2d\palette.c" />
+    <ClCompile Include="2d\pcx.c" />
+    <ClCompile Include="2d\pixel.c" />
+    <ClCompile Include="2d\poly.c" />
+    <ClCompile Include="2d\rect.c" />
+    <ClCompile Include="2d\rle.c" />
+    <ClCompile Include="2d\scalec.c" />
+    <ClCompile Include="3d\clipper.c" />
+    <ClCompile Include="3d\draw.c" />
+    <ClCompile Include="3d\globvars.c" />
+    <ClCompile Include="3d\instance.c" />
+    <ClCompile Include="3d\interp.c" />
+    <ClCompile Include="3d\matrix.c" />
+    <ClCompile Include="3d\points.c" />
+    <ClCompile Include="3d\rod.c" />
+    <ClCompile Include="3d\setup.c" />
+    <ClCompile Include="arch\ogl\gr.c" />
+    <ClCompile Include="arch\ogl\ogl.c" />
+    <ClCompile Include="arch\sdl\digi.c" />
+    <ClCompile Include="arch\sdl\digi_audio.c" />
+    <ClCompile Include="arch\sdl\digi_mixer.c" />
+    <ClCompile Include="arch\sdl\digi_mixer_music.c" />
+    <ClCompile Include="arch\sdl\event.c" />
+    <ClCompile Include="arch\sdl\init.c" />
+    <ClCompile Include="arch\sdl\joy.c" />
+    <ClCompile Include="arch\sdl\jukebox.c" />
+    <ClCompile Include="arch\sdl\key.c" />
+    <ClCompile Include="arch\sdl\mouse.c" />
+    <ClCompile Include="arch\sdl\rbaudio.c" />
+    <ClCompile Include="arch\sdl\timer.c" />
+    <ClCompile Include="arch\sdl\window.c" />
+    <ClCompile Include="arch\win32\messagebox.c" />
+    <ClCompile Include="editor\autosave.c" />
+    <ClCompile Include="editor\centers.c" />
+    <ClCompile Include="editor\curves.c" />
+    <ClCompile Include="editor\eglobal.c" />
+    <ClCompile Include="editor\elight.c" />
+    <ClCompile Include="editor\eobject.c" />
+    <ClCompile Include="editor\eswitch.c" />
+    <ClCompile Include="editor\fixseg.c" />
+    <ClCompile Include="editor\func.c" />
+    <ClCompile Include="editor\group.c" />
+    <ClCompile Include="editor\info.c" />
+    <ClCompile Include="editor\kbuild.c" />
+    <ClCompile Include="editor\kcurve.c" />
+    <ClCompile Include="editor\kfuncs.c" />
+    <ClCompile Include="editor\kgame.c" />
+    <ClCompile Include="editor\khelp.c" />
+    <ClCompile Include="editor\kmine.c" />
+    <ClCompile Include="editor\ksegmove.c" />
+    <ClCompile Include="editor\ksegsel.c" />
+    <ClCompile Include="editor\ksegsize.c" />
+    <ClCompile Include="editor\ktmap.c" />
+    <ClCompile Include="editor\kview.c" />
+    <ClCompile Include="editor\med.c" />
+    <ClCompile Include="editor\meddraw.c" />
+    <ClCompile Include="editor\medmisc.c" />
+    <ClCompile Include="editor\medrobot.c" />
+    <ClCompile Include="editor\medsel.c" />
+    <ClCompile Include="editor\medwall.c" />
+    <ClCompile Include="editor\mine.c" />
+    <ClCompile Include="editor\objpage.c" />
+    <ClCompile Include="editor\esegment.c" />
+    <ClCompile Include="editor\seguvs.c" />
+    <ClCompile Include="editor\texpage.c" />
+    <ClCompile Include="editor\texture.c" />
+    <ClCompile Include="iff\iff.c" />
+    <ClCompile Include="main\ai.c" />
+    <ClCompile Include="main\ai2.c" />
+    <ClCompile Include="main\aipath.c" />
+    <ClCompile Include="main\automap.c" />
+    <ClCompile Include="main\bm.c" />
+    <ClCompile Include="main\bmread.c" />
+    <ClCompile Include="main\cntrlcen.c" />
+    <ClCompile Include="main\collide.c" />
+    <ClCompile Include="main\config.c" />
+    <ClCompile Include="main\console.c" />
+    <ClCompile Include="main\controls.c" />
+    <ClCompile Include="main\credits.c" />
+    <ClCompile Include="main\digiobj.c" />
+    <ClCompile Include="main\dumpmine.c" />
+    <ClCompile Include="main\effects.c" />
+    <ClCompile Include="main\endlevel.c" />
+    <ClCompile Include="main\escort.c" />
+    <ClCompile Include="main\fireball.c" />
+    <ClCompile Include="main\fuelcen.c" />
+    <ClCompile Include="main\fvi.c" />
+    <ClCompile Include="main\game.c" />
+    <ClCompile Include="main\gamecntl.c" />
+    <ClCompile Include="main\gamefont.c" />
+    <ClCompile Include="main\gamemine.c" />
+    <ClCompile Include="main\gamepal.c" />
+    <ClCompile Include="main\gamerend.c" />
+    <ClCompile Include="main\gamesave.c" />
+    <ClCompile Include="main\gameseg.c" />
+    <ClCompile Include="main\gameseq.c" />
+    <ClCompile Include="main\gauges.c" />
+    <ClCompile Include="main\hostage.c" />
+    <ClCompile Include="main\hud.c" />
+    <ClCompile Include="main\inferno.c" />
+    <ClCompile Include="main\kconfig.c" />
+    <ClCompile Include="main\kmatrix.c" />
+    <ClCompile Include="main\laser.c" />
+    <ClCompile Include="main\lighting.c" />
+    <ClCompile Include="main\menu.c" />
+    <ClCompile Include="main\mglobal.c" />
+    <ClCompile Include="main\mission.c" />
+    <ClCompile Include="main\morph.c" />
+    <ClCompile Include="main\movie.c" />
+    <ClCompile Include="main\multi.c" />
+    <ClCompile Include="main\multibot.c" />
+    <ClCompile Include="main\net_udp.c" />
+    <ClCompile Include="main\newdemo.c" />
+    <ClCompile Include="main\newmenu.c" />
+    <ClCompile Include="main\object.c" />
+    <ClCompile Include="main\paging.c" />
+    <ClCompile Include="main\physics.c" />
+    <ClCompile Include="main\piggy.c" />
+    <ClCompile Include="main\player.c" />
+    <ClCompile Include="main\playsave.c" />
+    <ClCompile Include="main\polyobj.c" />
+    <ClCompile Include="main\powerup.c" />
+    <ClCompile Include="main\render.c" />
+    <ClCompile Include="main\robot.c" />
+    <ClCompile Include="main\scores.c" />
+    <ClCompile Include="main\segment.c" />
+    <ClCompile Include="main\slew.c" />
+    <ClCompile Include="main\songs.c" />
+    <ClCompile Include="main\state.c" />
+    <ClCompile Include="main\switch.c" />
+    <ClCompile Include="main\terrain.c" />
+    <ClCompile Include="main\texmerge.c" />
+    <ClCompile Include="main\text.c" />
+    <ClCompile Include="main\titles.c" />
+    <ClCompile Include="main\vclip.c" />
+    <ClCompile Include="main\vers_id.c" />
+    <ClCompile Include="main\wall.c" />
+    <ClCompile Include="main\weapon.c" />
+    <ClCompile Include="maths\fixc.c" />
+    <ClCompile Include="maths\rand.c" />
+    <ClCompile Include="maths\tables.c" />
+    <ClCompile Include="maths\vecmat.c" />
+    <ClCompile Include="mem\mem.c" />
+    <ClCompile Include="misc\args.c" />
+    <ClCompile Include="misc\dl_list.c" />
+    <ClCompile Include="misc\error.c" />
+    <ClCompile Include="misc\hash.c" />
+    <ClCompile Include="misc\hmp.c" />
+    <ClCompile Include="misc\ignorecase.c" />
+    <ClCompile Include="misc\physfsrwops.c" />
+    <ClCompile Include="misc\physfsx.c" />
+    <ClCompile Include="misc\strio.c" />
+    <ClCompile Include="misc\strutil.c" />
+    <ClCompile Include="texmap\ntmap.c" />
+    <ClCompile Include="texmap\scanline.c" />
+    <ClCompile Include="texmap\tmapflat.c" />
+    <ClCompile Include="ui\button.c" />
+    <ClCompile Include="ui\checkbox.c" />
+    <ClCompile Include="ui\dialog.c" />
+    <ClCompile Include="ui\file.c" />
+    <ClCompile Include="ui\gadget.c" />
+    <ClCompile Include="ui\icon.c" />
+    <ClCompile Include="ui\inputbox.c" />
+    <ClCompile Include="ui\keypad.c" />
+    <ClCompile Include="ui\keypress.c" />
+    <ClCompile Include="ui\keytrap.c" />
+    <ClCompile Include="ui\listbox.c" />
+    <ClCompile Include="ui\uimenu.c" />
+    <ClCompile Include="ui\menubar.c" />
+    <ClCompile Include="ui\message.c" />
+    <ClCompile Include="ui\popup.c" />
+    <ClCompile Include="ui\radio.c" />
+    <ClCompile Include="ui\scroll.c" />
+    <ClCompile Include="ui\ui.c" />
+    <ClCompile Include="ui\uidraw.c" />
+    <ClCompile Include="ui\userbox.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="2d\bitmap.h" />
+    <ClInclude Include="2d\clip.h" />
+    <ClInclude Include="3d\clipper.h" />
+    <ClInclude Include="3d\globvars.h" />
+    <ClInclude Include="arch\win32\include\resource.h" />
+    <ClInclude Include="main\ai.h" />
+    <ClInclude Include="main\aistruct.h" />
+    <ClInclude Include="main\automap.h" />
+    <ClInclude Include="main\bm.h" />
+    <ClInclude Include="main\bmread.h" />
+    <ClInclude Include="main\cntrlcen.h" />
+    <ClInclude Include="main\collide.h" />
+    <ClInclude Include="main\config.h" />
+    <ClInclude Include="main\controls.h" />
+    <ClInclude Include="main\credits.h" />
+    <ClInclude Include="main\digi.h" />
+    <ClInclude Include="main\effects.h" />
+    <ClInclude Include="main\endlevel.h" />
+    <ClInclude Include="main\escort.h" />
+    <ClInclude Include="main\fireball.h" />
+    <ClInclude Include="main\fuelcen.h" />
+    <ClInclude Include="main\fvi.h" />
+    <ClInclude Include="main\game.h" />
+    <ClInclude Include="main\gamefont.h" />
+    <ClInclude Include="main\gamemine.h" />
+    <ClInclude Include="main\gamepal.h" />
+    <ClInclude Include="main\gamesave.h" />
+    <ClInclude Include="main\gameseg.h" />
+    <ClInclude Include="main\gameseq.h" />
+    <ClInclude Include="main\gauges.h" />
+    <ClInclude Include="main\hostage.h" />
+    <ClInclude Include="main\hudmsg.h" />
+    <ClInclude Include="main\inferno.h" />
+    <ClInclude Include="main\kconfig.h" />
+    <ClInclude Include="main\kmatrix.h" />
+    <ClInclude Include="main\laser.h" />
+    <ClInclude Include="main\lighting.h" />
+    <ClInclude Include="main\menu.h" />
+    <ClInclude Include="main\mission.h" />
+    <ClInclude Include="main\morph.h" />
+    <ClInclude Include="main\movie.h" />
+    <ClInclude Include="main\multi.h" />
+    <ClInclude Include="main\multibot.h" />
+    <ClInclude Include="main\net_udp.h" />
+    <ClInclude Include="main\newdemo.h" />
+    <ClInclude Include="main\newmenu.h" />
+    <ClInclude Include="main\object.h" />
+    <ClInclude Include="main\paging.h" />
+    <ClInclude Include="main\physics.h" />
+    <ClInclude Include="main\piggy.h" />
+    <ClInclude Include="main\player.h" />
+    <ClInclude Include="main\playsave.h" />
+    <ClInclude Include="main\polyobj.h" />
+    <ClInclude Include="main\powerup.h" />
+    <ClInclude Include="main\render.h" />
+    <ClInclude Include="main\robot.h" />
+    <ClInclude Include="main\scores.h" />
+    <ClInclude Include="main\screens.h" />
+    <ClInclude Include="main\segment.h" />
+    <ClInclude Include="main\segpoint.h" />
+    <ClInclude Include="main\slew.h" />
+    <ClInclude Include="main\songs.h" />
+    <ClInclude Include="main\sounds.h" />
+    <ClInclude Include="main\state.h" />
+    <ClInclude Include="main\switch.h" />
+    <ClInclude Include="main\terrain.h" />
+    <ClInclude Include="main\texmerge.h" />
+    <ClInclude Include="main\text.h" />
+    <ClInclude Include="main\textures.h" />
+    <ClInclude Include="main\titles.h" />
+    <ClInclude Include="main\vclip.h" />
+    <ClInclude Include="main\vers_id.h" />
+    <ClInclude Include="main\wall.h" />
+    <ClInclude Include="main\weapon.h" />
+    <ClInclude Include="texmap\scanline.h" />
+    <ClInclude Include="texmap\texmapl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="libmve.vcxproj">
+      <Project>{c6b70ed1-18f4-4b21-add0-85e4d9e93b6c}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="arch\win32\d2x-rebirth.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="arch\win32\d2x-rebirth.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="texmap\tmapfade.asm">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </None>
+    <None Include="texmap\tmap_flt.asm">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </None>
+    <None Include="texmap\tmap_inc.asm">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </None>
+    <None Include="texmap\tmap_lin.asm">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </None>
+    <None Include="texmap\tmap_ll.asm">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </None>
+    <None Include="texmap\tmap_per.asm">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="texmap\tmapppc.a" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -52,6 +52,9 @@ Thumbs.db
 # VS Code #
 ###########
 .vscode/*
+/.vs
+/d1/.vs
+/d2/.vs/D2X-Retro/v15
 
 # Executables #
 ###############

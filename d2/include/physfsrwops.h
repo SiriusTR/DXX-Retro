@@ -30,6 +30,8 @@
 #endif
 #include <SDL/SDL.h>
 
+#define __EXPORT__
+
 #ifdef __cplusplus
 extern "C" {
 #endif
